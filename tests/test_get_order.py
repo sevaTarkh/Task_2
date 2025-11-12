@@ -16,7 +16,7 @@ class TestGetOrder:
         response = requests.get(f"{Constants.url_burger}/api/orders", headers={'Authorization': login_pass_name_token[3]})
 
 
-        assert response.status_code == 200 and response.json()['success'] == True and response.json()['orders']!= []
+        assert response.status_code == 200 and response.json()['success'] == True and response.json()['orders'] != []
 
 
     @allure.title('Получение заказов не авторизованного пользователя')

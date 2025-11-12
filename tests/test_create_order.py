@@ -8,7 +8,7 @@ from data.data import Constants
 class TestCreateOrder:
 
     @allure.title('Создание заказа авторизованного пользователя')
-    @allure.description('Отправляем PATCH запрос, проверяем тело и статус ответа')
+    @allure.description('Отправляем POST запрос, проверяем тело и статус ответа')
     def test_create_order_hash_ingredients_response_status_code_200(self, create_user_and_delete_after):
 
         login_pass_name_token = create_user_and_delete_after
@@ -24,7 +24,7 @@ class TestCreateOrder:
 
 
     @allure.title('Создание заказа не авторизованного пользователя')
-    @allure.description('Отправляем PATCH запрос, проверяем тело и статус ответа')
+    @allure.description('Отправляем POST запрос, проверяем тело и статус ответа')
     def test_create_order_hash_ingredients_not_auth_user_response_status_code_200(self):
 
         payload = {
@@ -38,7 +38,7 @@ class TestCreateOrder:
 
 
     @allure.title('Создание заказа без ингредиентов')
-    @allure.description('Отправляем PATCH запрос, проверяем тело и статус ответа')
+    @allure.description('Отправляем POST запрос, проверяем тело и статус ответа')
     def test_create_order_with_out_ingredients_response_status_code_400(self, create_user_and_delete_after):
 
         login_pass_name_token = create_user_and_delete_after
@@ -53,7 +53,7 @@ class TestCreateOrder:
 
 
     @allure.title('Создание заказа с некорректным хешом ингредиентов')
-    @allure.description('Отправляем PATCH запрос, проверяем тело и статус ответа')
+    @allure.description('Отправляем POST запрос, проверяем тело и статус ответа')
     def test_create_order_wrond_ingredients_response_status_code_500(self, create_user_and_delete_after):
 
         login_pass_name_token = create_user_and_delete_after
